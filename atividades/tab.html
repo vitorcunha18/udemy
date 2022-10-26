@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    
+</style>
+<body>
+    <h1>Tabuada</h1>
+
+    <h2>Digite um número pra mostrar a tabuada</h2>
+
+    <input id="input" type="text">
+    
+   
+
+    <button onclick="mostrarTab()">Mostrar tab</button>
+    <button onclick="limpaTab()">Limpar tab</button>
+
+    <div id="div"></div>
+    <div id="tab"></div>
+
+    <script>
+        const output = document.getElementById('tab');
+        const div = document.getElementById('div');
+        const input = document.getElementById('input');
+      
+        function mostrarTab(){
+            const v = parseInt(input.value)
+            let msg = ''
+
+            div.innerHTML = `<br> Valor da Tabuada de ${input.value} <br>`
+            
+            for (let j = 0; j<=10; j++) {
+                msg += `<p>Valor da ${j} x ${v}: ${j*v}</p>`
+            }
+
+            output.innerHTML = msg
+        }
+
+        function limpaTab(){
+            div.innerText = '';
+            output.innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
