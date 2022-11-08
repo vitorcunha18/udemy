@@ -13,6 +13,8 @@ try {
     soma = sum(3,"a")
 }catch (e) {
     console.log('colo nuemro')
+} finally{
+    
 }
 
 console.log(soma)
