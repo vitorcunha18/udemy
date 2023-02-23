@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node vs element</title>
+</head>
+<style>
+    body{
+        display: flex;
+        background: #252525;
+        color:#fff;
+        align-items:center ;
+        justify-content: center;
+    }
+    div{
+        width: 200px;
+    }
+</style>
+<body>
+    <div>
+        <h1>Nós DOM</h1>
+        <h3>Navecacao dos nós </h3>
+        <ul>
+            <li>node.parentNode</li>
+            <li>.parentElement</li>
+            <li>.nextSibling</li>
+            <li>.previousSibling</li>
+        </ul>
+        <h3>Acessar os Filhos</h3> 
+            <ul>
+                <li>node.childnodes</li>
+                <li>.children</li>
+                <li>.firtsChild</li>
+                <li>.fisrtElementChid</li>
+                <li>.lastChild</li>
+                <li>.lastElementeChild</li>
+                <li>hasChildNodes() return false : true</li>
+            </ul>
+        <h3>Adicionar nós</h3>
+            <ul>
+                <li>Parentnode.prepend() - add antes</li> 
+                <li>.append() - add depois</li>         
+            </ul> 
+            <ul>
+                <li>node.appendChild() </li> 
+                <li>.insertBefore()</li> 
+                <li>.cloneNode()</li>   
+            </ul>
+            <ul>
+                <li>childNode.after()</li>
+                <li>.before()</li>       
+            </ul>
+            <ul>
+                <li>element.insertAdjacentElement()</li> 
+                <li>.AdjacentHTML()</li>      
+                <li>.insertAdjacentText()</li>
+                    
+            </ul>  
+
+            <h3>Remover nó </h3> 
+            <ul>
+            <li>node.replaceChild()</li> 
+                <li>.removeChild()</li>
+                <li>childNode.remove()</li>
+            </ul>
+
+            <h3>Criando nós </h3>
+            <ul>
+                <li>document.creteElemente()</li> 
+                <li>.createAttribute() </li>
+                <li>.createTextNode()</li>
+                <li>.write()</li>
+            </ul>
+    </div>
+</body>
+</html>

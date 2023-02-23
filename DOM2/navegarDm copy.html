@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Navegar DOM</title>
+</head>
+<body>
+    <h1>Aual de DOM</h1>
+
+    <div class="container">
+        <p data-teste="01">teste 1</p>
+        <p>lorem <a href="#">link</a> .</p>
+
+        <p>teste 2</p>
+
+        <input data-masck type="text" value="" maxlength="6" placeholder="00000-A">
+
+        <h2>Lista<h2>
+        <ul>
+            <li>item 1 </li>
+            <li>item 2 
+                <ul>
+                    <li>item 2-a</li>
+                    <li>item 2-b</li>
+                    <li>item 2-c</li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>item <a href="#">link</a></li>
+        </ul>
+
+    </div>
+    <script>
+        (function(){
+            const title = document.createElement('h1')
+            const atributo = document.createAttribute('id')
+            const text = document.createTextNode('Criar nós no DOM')
+            const data = document.querySelector('[data-teste]')
+            atributo.value = 'titulo'
+
+
+            //Setando atributos 
+            title.setAttributeNode(atributo)
+            title.appendChild(text)
+            title.setAttribute('style','background: #888;')
+            title.textContent = 'Text Content'
+
+            console.log(title)
+
+            //adicionando 
+            // document.querySelector('container').appendChild(title)
+            // document.querySelector('.container').prepend(title')
+
+            const con = document.querySelector('.container')
+            document.querySelector('.container').insertBefore(title, data )
+    
+            let clone = con.cloneNode(true)
+
+            con.parentElement.append(clone)
+            
+            const input = document.querySelector('[data-masck]')
+
+            function texto(elemento) {
+                var newvalue = elemento.target.value
+
+                if ( newvalue.match(/(\d{5})/)){
+                    newvalue = elemento.target.value.replace(/\W/g,"");
+                    newvalue= newvalue.replace(/(\d{5})([A-Za-z]{1})/,"$1-$2");
+                    elemento.target.value = newvalue;
+
+                }else{
+                    newvalue = elemento.target.value.replace(/\D/g,"");
+                    elemento.target.value = newvalue;
+                    console.log('not expressao')
+                    
+                }
+            }
+            
+
+            input.addEventListener('input', texto)
+             
+        }())
+    
+    </script>
+</body>
+</html>
